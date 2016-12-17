@@ -36,15 +36,49 @@
                 <?php if ($top_bar['facebook'] != ''): ?>
                     <li>
                         <a href="<?php echo $top_bar['facebook']; ?>">
-                            <i class="fa fa-facebook-official"></i>
+                            <i class="fa fa-facebook"></i>
                         </a>
                     </li>
                 <?php endif; ?>
+                <?php if ($top_bar['instagram'] != ''): ?>
+                    <li>
+                        <a href="<?php echo $top_bar['instagram']?>">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if ($top_bar['twitter'] != ''): ?>
+                    <li>
+                        <a href="<?php echo $top_bar['twitter']?>">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if ($top_bar['google'] != ''): ?>
+                     <li>
+                        <a href="<?php echo $top_bar['google']?>">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                <?php endif;?>
+                <?php if ($top_bar['youtube'] != ''): ?>
+                     <li>
+                        <a href="<?php echo $top_bar['Youtube']?>">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </li>
+                <?php endif;?>
             </ul>
+            <div class="clearfix"></div>
         </div>
     </div>
-    <div class="logo">
-
+    <div class="container">
+        <div class="top-logo">
+            <h1><?php bloginfo('name')?><h1>
+        </div>
+        <div class="top-menu">
+            <?php wp_nav_menu(array('menu' => 'primary')) ?>
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <?php wp_nav_menu(array('menu' => 'primary')) ?>
 </header>

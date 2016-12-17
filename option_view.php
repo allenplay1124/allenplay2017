@@ -23,6 +23,18 @@
                 </td>
             </tr>
             <tr>
+                <th>Google plus 網址</th>
+                <td>
+                    <input type="text" class="regular-text" name="top_bar_option[google]" value="<?php esc_attr_e($options['google']) ?>">
+                </td>
+            </tr>
+             <tr>
+                <th>Youtube 網址</th>
+                <td>
+                    <input type="text" class="regular-text" name="top_bar_option[youtube]" value="<?php esc_attr_e($options['youtube']) ?>">
+                </td>
+            </tr>
+            <tr>
                 <th></th>
                 <td><input type="submit" class="button-primary" value="<?php _e('Save Options', 'sampletheme'); ?>" /></td>
             </tr>
