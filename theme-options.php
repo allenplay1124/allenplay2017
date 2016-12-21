@@ -9,10 +9,10 @@ function theme_options_init()
 function theme_options_add_page()
 {
     add_theme_page(
-        __('頁首設定', 'sampletheme'), 
-        __('頁首設定', 'sampletheme'), 
-        'edit_theme_options', 
-        'theme_options', 
+        __('佈景設定', 'sampletheme'),
+        __('佈景設定', 'sampletheme'),
+        'edit_theme_options',
+        'theme_options',
         'theme_options_do_page'
     );
 }
@@ -27,7 +27,10 @@ function theme_options_validate($input = [])
     $input['instagram'] = wp_filter_nohtml_kses($input['instagram']);
     $input['twitter'] = wp_filter_nohtml_kses($input['twitter']);
     $input['google'] = wp_filter_nohtml_kses($input['google']);
-    $input['youtube'] = wp_filter_nohtml_kses($input['youtube']);
+    $input['first_cate'] = wp_filter_nohtml_kses($input['first_cate']);
+    $input['second_cate'] = wp_filter_nohtml_kses($input['second_cate']);
+    $input['third_cate'] = wp_filter_nohtml_kses($input['third_cate']);
+    $input['footer'] = ($input['footer']);
 
     return $input;
 }
