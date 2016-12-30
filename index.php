@@ -21,7 +21,7 @@ foreach ($article as $key => $val) {
                     <article class="col-sm-4">
                         <div class="post-thumbnail">
                             <?php if (has_post_thumbnail($val['ID'])): ?>
-                                <div style="
+                                <div class="post-thumb-img" style="
                                     background:url('<?php echo get_img_url($val['ID']);?>');
                                     background-size: cover;
                                     background-attachment: fixed;
@@ -58,7 +58,7 @@ foreach ($article as $key => $val) {
                     <a href="<?php echo wp_get_shortlink($val['ID']) ?>">
                         <article class="col-sm-3">
                             <?php if (has_post_thumbnail($val['ID'])): ?>
-                                <div style="
+                                <div class="post-thumb-img" style="
                                     background:url('<?php echo get_img_url($val['ID']); ?>');
                                     background-size: cover;
                                     background-attachment: fixed;
@@ -98,7 +98,7 @@ foreach ($article as $key => $val) {
                     <a href="<?php echo wp_get_shortlink($val['ID']) ?>">
                         <article class="col-sm-5 post-content">
                             <?php if (has_post_thumbnail($val['ID'])): ?>
-                                <div class="col-sm-6" style="
+                                <div class="col-sm-6 post-thumb-img" style="
                                     background:url('<?php echo get_img_url($val['ID']); ?>');
                                     background-size: cover;
                                     background-attachment: fixed;
@@ -145,7 +145,7 @@ foreach ($article as $key => $val) {
                     <a href="<?php echo wp_get_shortlink($val['ID']) ?>">
                         <article class="col-sm-3 post-content">
                             <?php if (has_post_thumbnail($val['ID'])): ?>
-                                <div style="
+                                <div class="post-thumb-img"  style="
                                     background:url('<?php echo get_img_url($val['ID']); ?>');
                                     background-size: cover;
                                     background-attachment: fixed;
@@ -177,5 +177,24 @@ foreach ($article as $key => $val) {
         </section>
     <?php endif; ?>
 </main>
-<?php include 'sidebar.php' ?>
+<script type="text/javascript">
+    (function($){
+        $(document).ready(function(e){
+             hover_img();
+        });
+        function hover_img()
+        {
+            $('.post-thumb-img').mouseover(function(e){
+                $(this).css({
+                    'background-color':'#85AF4B',
+                    'background-blend-mode':'multiply'
+                });
+            }).mouseout(function(e){
+                $(this).css({'background-color':'#FFFFFF'});
+
+            });
+        }
+    })(jQuery)
+</script>
+<?php include 'home_sidebar.php' ?>
 <?php include 'footer.php' ?>

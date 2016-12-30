@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="<?php language_attributes(); ?>">
+<html <?php language_attributes(); ?>>
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
@@ -7,7 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php (is_singular() && get_option('thread_comments')) ? wp_enqueue_script('comment-reply') : ''; ?>
     <?php wp_head(); ?>
-    <title><?php bloginfo('name'); ?></title>
+    <title><?php
+            if (is_home()) {
+                bloginfo('name');
+                echo ' - ';
+                bloginfo('description');
+            } else {
+                wp_title(' - ', true, 'right');
+                bloginfo('name');
+            } ?></title>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">

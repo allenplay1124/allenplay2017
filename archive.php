@@ -1,15 +1,31 @@
-<?php include_once 'header.php';?>
+<?php include_once('header.php') ?>
 <?php
-    $args = '';
-    if (isset($_GET['s']) && $_GET['s'] != '') {
-        $args['s'] = htmlentities($_GET['s']);
-        $archive_name = htmlentities($_GET['s']);
+    $archive_name = '';
+    if (isset($_GET['cat']) && $_GET['cat'] != '') {
+        $args['category'] = (int) $_GET['cat'];
+        $archive_name = get_cat_name($_GET['cat']);
     }
-    $post = get_posts($args);
+    if (isset($_GET['tag']) && $_GET['tag'] != '') {
+        $args['tag'] = $_GET['tag'];
+        $archive_name = $_GET['tag'];
+    }
+    if ($archive_name == '') {
+        $uri = explode('/', $_SERVER['REQUEST_URI']);
+        if ($uri[1] == 'tag') {
+            $args['tag'] = $uri[2];
+            $archive_name = $uri[2];
+        }
+        if ($uri[1] == 'category') {
+            $cate_id = get_cat_ID(urldecode($uri[2]));
+            $args['category'] = $cate_id;
+            $archive_name = urldecode($uri[2]);
+        }
+    }
  ?>
-<div class="post-info">
-    <div class="container">
-        <div class="col-sm-8">
+<div class="page-info">
+	<div class="container">
+		<div class="col-sm-8">
+            <?php $post = get_posts($args); ?>
             <?php foreach ($post as $val): ?>
                 <article>
                     <h2><a href="<?php echo wp_get_shortlink($val->ID); ?>"><?php echo $val->post_title; ?></a></h2>
@@ -30,10 +46,10 @@
                     </div>
                 </article>
             <?php endforeach; ?>
-        </div>
+		</div>
         <div class="col-sm-3">
             <?php include 'blog_sidebar.php' ?>
         </div>
-    </div>
+	</div>
 </div>
-<?php include_once 'footer.php'; ?>
+<?php include_once('footer.php') ?>

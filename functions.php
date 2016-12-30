@@ -33,3 +33,13 @@ register_sidebar(array(
     'before_title' => '<h1 class="sidebar-title">',
     'after_title' => '</h1>',
 ));
+
+register_sidebar(array(
+    'name' => '部落格側邊欄',
+    'id' => 'blog_sidebar',
+    'description' => '顯示部落格側邊欄',
+    'before_widget' => '<section id="%1$s" class="blog-sidebar">',
+    'after_widget' => '</section>',
+    'before_title' => '<h1 class="blog-sidebar-title">',
+    'after_title' => '</h1>',
+));
