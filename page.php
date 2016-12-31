@@ -3,6 +3,7 @@ include_once 'header.php';
 $post_data = get_post(null, ARRAY_A);
 
 ?>
+<?php the_post(); ?>
 <div class="post-default-img" style="
 background:url('<?php echo get_img_url($post_data['ID']) ?>');
 background-size: cover;
@@ -16,6 +17,8 @@ height:720px;
 -o-filter: blur(3px);
 -ms-filter: blur(3px);
 filter: blur(3px);
+    position:relative;
+    z-index:-1;
 "
 >
 </div>

@@ -1,8 +1,9 @@
     <?php
-include_once 'header.php';
+get_header();
 $post_data = get_post(null, ARRAY_A);
 
 ?>
+<?php the_post(); ?>
 <div class="post-default-img" style="
     background:url('<?php echo get_img_url($post_data['ID']) ?>');
     background-size: cover;
@@ -16,12 +17,14 @@ $post_data = get_post(null, ARRAY_A);
     -o-filter: blur(3px);
     -ms-filter: blur(3px);
     filter: blur(3px);
+    position:relative;
+    z-index:-1;
     "
     >
 </div>
-<article class="container" id="blog-article">
+<article class="container" id="blog-article" style="position:relative;z-index:1;">
     <div class="page-header">
-        <h1><?php echo $post_data['post_title'] ?></h1>
+        <h1><?php the_title() ?></h1>
     </div>
     <div class="col-sm-8">
         <div class="breadcrumb">
@@ -37,22 +40,19 @@ $post_data = get_post(null, ARRAY_A);
             <?php endforeach; ?>
 
             <i class="fa fa-bookmark" aria-hidden="true"></i>
-            <?php foreach ($post_data['post_category'] as $val): ?>
-                <a href="<?php echo get_category_link($val); ?>">
-                    <?php echo get_cat_name($val) ?>
-                </a>
-            <?php endforeach; ?>
+            <?php the_category(', '); ?> 
             <i class="fa fa-commenting" aria-hidden="true"></i>
             <?php echo $post_data['comment_count'] ?>
         </div>
         <div class="blog-post-content">
-            <?php the_content() ?>
+            <?php the_content(); ?>
         </div>
         <div class="author">
             <div class="author-avatar">
                 <?php echo get_avatar(get_the_author_meta('ID'));?>
             </div>
             <div class="author-info">
+            	
                 <h4><?php get_the_author() ?></h4>
                 <?php the_author_meta('description'); ?>
                 <a class="author-link" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" rel="author">瀏覽全部文章 <?php get_the_author(); ?> <span class="meta-nav">&rarr;</span></a>
@@ -67,4 +67,4 @@ $post_data = get_post(null, ARRAY_A);
         <?php include 'blog_sidebar.php' ?>
     </div>
 </article>
-<?php include_once('footer.php') ?>
+<?php  get_footer(); ?>
