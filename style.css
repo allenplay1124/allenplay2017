@@ -257,8 +257,10 @@
     }
 
     #blog-article {
+    	position:relative;
         margin-top: -100px;
         background: #FFF;
+        z-index:1;
         box-shadow: 4px -10px 30px #333333;
         -webkit-box-shadow: 4px -10px 30px #333333;
         -moz-box-shadow: 4px -10px 30px #333333;
