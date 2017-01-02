@@ -8,6 +8,18 @@
  * Tag: Green, Greenery
  */
 
+    a:link {
+        color: #85AF4B;
+    }
+
+    a:visited {
+        color: #85AF4B;
+    }
+
+    a:hover {
+        color: #c82a76;
+    }
+
     .top-nav {
         width: 100%;
         height: 25pt;
@@ -42,6 +54,10 @@
         padding-bottom: 60px;
     }
 
+    .breadcrumb {
+        padding: 12px 10px 1px 10px;
+    }
+
     #new-articles {
         background: #f2fee7;
     }
@@ -62,7 +78,7 @@
     }
 
     #new-articles .page-header {
-        text-align: center;
+        text-align: left;
         color: #3c6118;
         text-shadow: #e7e7e7 4px 4px 4px;
     }
@@ -72,7 +88,7 @@
     }
 
     #first_cate .page-header {
-        text-align: center;
+        text-align: left;
         color: #3c6118;
         text-shadow: #e7e7e7 4px 4px 4px;
     }
@@ -97,7 +113,7 @@
     }
 
     #second_cate .page-header {
-        text-align: center;
+        text-align: left;
         color: #FFF;
         text-shadow: #e7e7e7 4px 4px 4px;
     }
@@ -143,23 +159,12 @@
 
     #third_cate .post-content {
         text-align: justify;
-        margin-left: 45px;
-        margin-right: 40px;
         margin-top: 40px;
-        border: 1px solid #bebebe;
         overflow: hidden;
-        background: #FFF;
-        -webkit-border-top-left-radius: 200px;
-        -webkit-border-top-right-radius: 200px;
-        -moz-border-radius-topleft: 200px;
-        -moz-border-radius-topright: 200px;
-        border-top-left-radius: 200px;
-        border-top-right-radius: 200px;
-        padding-top: 20px;
     }
 
     #third_cate .page-header {
-        text-align: center;
+        text-align: left;
         color: #3c6118;
         text-shadow: #e7e7e7 4px 4px 4px;
     }
@@ -183,14 +188,6 @@
 
     #third_cate a:hover {
         text-decoration: none;
-    }
-
-    #third_cate .post-thumb-img {
-        padding-top: 120px;
-        padding-bottom: 120px;
-        -webkit-border-radius: 500px;
-        -moz-border-radius: 500px;
-        border-radius: 500px;
     }
 
     #home-sidebar {
@@ -244,12 +241,12 @@
     }
 
     footer {
-        background: #d1d1d1;
-        margin-top: -30px;
+        background: #eaffbe;
+        margin-top: -20px;
         padding-top: 30px;
         padding-bottom: 30px;
         text-align: center;
-        color: #909090;
+        color: #095b2c;
     }
 
     footer a:hover {
@@ -257,10 +254,10 @@
     }
 
     #blog-article {
-    	position:relative;
+        position: relative;
         margin-top: -100px;
         background: #FFF;
-        z-index:1;
+        z-index: 1;
         box-shadow: 4px -10px 30px #333333;
         -webkit-box-shadow: 4px -10px 30px #333333;
         -moz-box-shadow: 4px -10px 30px #333333;
@@ -294,7 +291,46 @@
     }
 
     .blog-sidebar .blog-sidebar-title {
-        font-size: 24pt;
+        font-size: 16pt;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #85AF4B;
+        border-collapse: collapse;
+    }
+
+    .blog-sidebar-title-word {
+        border-bottom: 8px solid #c82a76;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .section-title {
+        border-bottom: 8px solid #c82a76;
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-bottom: 15px;
+    }
+
+    .blog-sidebar ul li {
+        margin-left: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        list-style-type: none;
+    }
+
+    .blog-sidebar ul li a:link {
+        color: #85AF4B;
+    }
+
+    .blog-sidebar ul li a:visited {
+        color: #85AF4B;
+    }
+
+    .blog-sidebar ul li a:hover {
+        color: #c82a76;
+    }
+
+    .blog-sidebar ul li a {
+        text-decoration: none;
     }
 
     .author {
@@ -330,16 +366,66 @@
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
-        padding:5px;
+        padding: 5px;
     }
 
     #commentform .submit {
         background: #85AF4B;
-        color:#FFF;
-        padding:10px;
+        color: #FFF;
+        padding: 10px;
     }
 
-    .post-info{
-        margin-top:50px;
+    .post-info {
+        margin-top: 50px;
         margin-bottom: 100px;
+    }
+
+    div.post-data-odd {
+        position: relative;
+        float: right;
+        top: -450px;
+        right: 50px;
+        background: rgba(255, 255, 255, 0.80);
+        max-width: 300px;
+        margin-bottom: -300px;
+        padding: 1px 20px 10px 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        box-shadow: 4px -10px 30px #333333;
+        -webkit-box-shadow: 4px -10px 30px #333333;
+        -moz-box-shadow: 4px -10px 30px #333333;
+    }
+
+    div.post-data-even {
+        position: relative;
+        float: left;
+        top: -450px;
+        85AF4B left: 50px;
+        background: rgba(255, 255, 255, 0.80);
+        max-width: 300px;
+        margin-bottom: -300px;
+        padding: 1px 20px 10px 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        box-shadow: 4px -10px 30px #333333;
+        -webkit-box-shadow: 4px -10px 30px #333333;
+        -moz-box-shadow: 4px -10px 30px #333333;
+    }
+
+    .avatar {
+        margin: 5px;
+    }
+
+    .browser {
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        font-szie: 64pt;
+        background: #85AF4B;
+        margin-top: -50px;
+        padding-top: 20px;
+        color: #518e26;
+        text-shadow: rgb(224, 224, 224) 1px 1px 0px;
     }

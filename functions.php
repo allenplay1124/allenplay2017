@@ -40,6 +40,6 @@ register_sidebar(array(
     'description' => '顯示部落格側邊欄',
     'before_widget' => '<section id="%1$s" class="blog-sidebar">',
     'after_widget' => '</section>',
-    'before_title' => '<h1 class="blog-sidebar-title">',
-    'after_title' => '</h1>',
+    'before_title' => '<h1 class="blog-sidebar-title"><span class="blog-sidebar-title-word">',
+    'after_title' => '</span></h1>',
 ));

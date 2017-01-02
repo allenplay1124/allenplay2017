@@ -1,5 +1,5 @@
     <?php
-get_header();
+include_once 'header.php';
 $post_data = get_post(null, ARRAY_A);
 
 ?>
@@ -40,7 +40,7 @@ $post_data = get_post(null, ARRAY_A);
             <?php endforeach; ?>
 
             <i class="fa fa-bookmark" aria-hidden="true"></i>
-            <?php the_category(', '); ?> 
+            <?php the_category(', '); ?>
             <i class="fa fa-commenting" aria-hidden="true"></i>
             <?php echo $post_data['comment_count'] ?>
         </div>
@@ -52,7 +52,7 @@ $post_data = get_post(null, ARRAY_A);
                 <?php echo get_avatar(get_the_author_meta('ID'));?>
             </div>
             <div class="author-info">
-            	
+
                 <h4><?php get_the_author() ?></h4>
                 <?php the_author_meta('description'); ?>
                 <a class="author-link" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" rel="author">瀏覽全部文章 <?php get_the_author(); ?> <span class="meta-nav">&rarr;</span></a>
@@ -67,4 +67,4 @@ $post_data = get_post(null, ARRAY_A);
         <?php include 'blog_sidebar.php' ?>
     </div>
 </article>
-<?php  get_footer(); ?>
+<?php  include_once('footer.php') ?>
