@@ -43,3 +43,5 @@ register_sidebar(array(
     'before_title' => '<h1 class="blog-sidebar-title"><span class="blog-sidebar-title-word">',
     'after_title' => '</span></h1>',
 ));
+
+add_theme_support('post-thumbnails');

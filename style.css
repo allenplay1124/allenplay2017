@@ -165,7 +165,7 @@
 
     #third_cate .page-header {
         text-align: left;
-        color: #3c6118;
+        color: #FFF;
         text-shadow: #e7e7e7 4px 4px 4px;
     }
 
@@ -401,7 +401,7 @@
         position: relative;
         float: left;
         top: -450px;
-        85AF4B left: 50px;
+        left: 50px;
         background: rgba(255, 255, 255, 0.80);
         max-width: 300px;
         margin-bottom: -300px;
