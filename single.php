@@ -1,9 +1,8 @@
     <?php
 include_once 'header.php';
 $post_data = get_post(null, ARRAY_A);
-
 ?>
-<?php the_post(); ?>
+
 <div class="post-default-img" style="
     background:url('<?php echo get_img_url($post_data['ID']) ?>');
     background-size: cover;
