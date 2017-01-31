@@ -35,46 +35,6 @@
                 </td>
             </tr>
             <tr>
-                <th>自訂分類列表(一)</th>
-                <td>
-                    <?php $cates = get_categories(); ?>
-                    <?php foreach ($cates as $val): ?>
-                        <label> <?php echo $val->name ?>(<?php echo $val->count ?>)
-                            <input type="radio" name="top_bar_option[first_cate]" value="<?php echo $val->term_id ?>"
-                            <?php echo ($options['first_cate'] == $val->term_id) ? 'checked' : ''; ?>
-                            />
-
-                        </label>
-                    <?php endforeach; ?>
-                </td>
-            </tr>
-            <tr>
-                <th>自訂分類列表(二)</th>
-                <td>
-                    <?php $cates = get_categories(); ?>
-                    <?php foreach ($cates as $val): ?>
-                        <label> <?php echo $val->name ?>(<?php echo $val->count ?>)
-                            <input type="radio" name="top_bar_option[second_cate]" value="<?php echo $val->term_id ?>"
-                            <?php echo ($options['second_cate'] == $val->term_id) ? 'checked' : ''; ?>
-                            />
-                        </label>
-                    <?php endforeach; ?>
-                </td>
-            </tr>
-            <tr>
-                <th>自訂分類列表(三)</th>
-                <td>
-                    <?php $cates = get_categories(); ?>
-                    <?php foreach ($cates as $val): ?>
-                        <label> <?php echo $val->name ?>(<?php echo $val->count ?>)
-                            <input type="radio" name="top_bar_option[third_cate]" value="<?php echo $val->term_id ?>"
-                            <?php echo ($options['third_cate'] == $val->term_id) ? 'checked' : ''; ?>                            />
-
-                        </label>
-                    <?php endforeach; ?>
-                </td>
-            </tr>
-            <tr>
                 <th>頁尾資訊</th>
                 <td>
                     <textarea name="top_bar_option[footer]" rows="4" cols="50"><?php echo (isset($options['footer'])) ? $options['footer'] : ''; ?></textarea>
