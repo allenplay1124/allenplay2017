@@ -27,9 +27,6 @@ function theme_options_validate($input = [])
     $input['instagram'] = wp_filter_nohtml_kses($input['instagram']);
     $input['twitter'] = wp_filter_nohtml_kses($input['twitter']);
     $input['google'] = wp_filter_nohtml_kses($input['google']);
-    $input['first_cate'] = wp_filter_nohtml_kses($input['first_cate']);
-    $input['second_cate'] = wp_filter_nohtml_kses($input['second_cate']);
-    $input['third_cate'] = wp_filter_nohtml_kses($input['third_cate']);
     $input['footer'] = ($input['footer']);
 
     return $input;
