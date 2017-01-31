@@ -21,9 +21,14 @@
             $archive_name = urldecode($uri[2]);
         }
     }
+    $args['posts_per_page'] = 9;
+    $args['offset'] = $wp_query->query_vars['paged'];
  ?>
 <div class="page-info">
 	<div class="container">
+        <div class="page-header">
+          <h1><?php echo $archive_name ?> <small>相關文章：</small></h1>
+        </div>
 		<div class="col-sm-8">
             <?php $post = get_posts($args); ?>
             <?php foreach ($post as $val): ?>
@@ -42,10 +47,14 @@
                         <?php echo $val->comment_count ?>
                     </div>
                     <div class="post-content">
-                        <?php echo mb_substr(strip_tags($val->post_content), 0, 120, 'utf-8');?>
+                        <?php echo mb_substr(strip_tags($val->post_content), 0, 150, 'utf-8');?>...
+                    </div>
+                    <div class="text-right">
+                        <a class="btn btn-primary" href="<?php echo wp_get_shortlink($val->ID); ?>">閱讀全文 <i class="fa fa-external-link"></i></a>
                     </div>
                 </article>
             <?php endforeach; ?>
+            <?php include_once('page_nav.php'); ?>
 		</div>
         <div class="col-sm-3">
             <?php include 'blog_sidebar.php' ?>
