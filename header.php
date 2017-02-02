@@ -30,12 +30,12 @@
         <meta name="copyright" content="<?php echo bloginfo('name') ?>">
         <meta itemprop="name" content="<?php wp_title(' - ', true, 'right'); ?><?php bloginfo('name'); ?>">
         <?php if(has_post_thumbnail()): ?>
-            <meta itemprop="image" content="<?php echo get_img_url(the_ID()) ?>">
+            <meta itemprop="image" content="<?php echo get_img_url(get_the_ID()) ?>">
         <?php endif; ?>
 
         <meta property="og:title" content="<?php wp_title(' - ', true, 'right'); ?><?php bloginfo('name'); ?>" >
         <meta property="og:url" content="<?php echo $post->guid ?>">
-        <meta property="og:image" content="<?php echo get_img_url(the_ID()) ?>">
+        <meta property="og:image" content="<?php echo get_img_url(get_the_ID()) ?>">
 
     <?php endif; ?>
 
