@@ -54,7 +54,7 @@
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS2 Feed" href="<?php bloginfo('rss2_url'); ?>" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url')?>?20170102">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url')?>?<?php echo date('Ymd') ?>">
 </head>
 
 <body>
@@ -128,6 +128,13 @@
                      <li>
                         <a target="_blank" href="<?php echo $top_bar['Youtube']?>">
                             <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </li>
+                <?php endif;?>
+                <?php if (isset($top_bar['github']) && $top_bar['github'] != ''): ?>
+                     <li>
+                        <a target="_blank" href="<?php echo $top_bar['github']?>">
+                            <i class="fa fa-github" aria-hidden="true"></i>
                         </a>
                     </li>
                 <?php endif;?>
