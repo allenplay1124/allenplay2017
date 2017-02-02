@@ -5,35 +5,41 @@
 		<?php $options = get_option('top_bar_option'); ?>
         <table>
             <tr>
-                <th style="width:20%">Facebook 網址</th>
+                <th style="width:20%">Facebook url</th>
                 <td>
                     <input type="text" class="regular-text" name="top_bar_option[facebook]" value="<?php esc_attr_e($options['facebook']) ?>">
                 </td>
             </tr>
             <tr>
-                <th>Instagram 網址</th>
+                <th>Instagram url</th>
                 <td>
                     <input type="text" class="regular-text" name="top_bar_option[instagram]" value="<?php esc_attr_e($options['instagram']) ?>">
                 </td>
             </tr>
             <tr>
-                <th>Twitter 網址</th>
+                <th>Twitter url</th>
                 <td>
                     <input type="text" class="regular-text" name="top_bar_option[twitter]" value="<?php esc_attr_e($options['twitter']) ?>">
                 </td>
             </tr>
             <tr>
-                <th>Google plus 網址</th>
+                <th>Google plus url</th>
                 <td>
                     <input type="text" class="regular-text" name="top_bar_option[google]" value="<?php esc_attr_e($options['google']) ?>">
                 </td>
             </tr>
              <tr>
-                <th>Youtube 網址</th>
+                <th>Youtube url</th>
                 <td>
                     <input type="text" class="regular-text" name="top_bar_option[youtube]" value="<?php esc_attr_e($options['youtube']) ?>">
                 </td>
             </tr>
+            <tr>
+               <th>github url</th>
+               <td>
+                   <input type="text" class="regular-text" name="top_bar_option[github]" value="<?php esc_attr_e($options['github']) ?>">
+               </td>
+           </tr>
             <tr>
                 <th>頁尾資訊</th>
                 <td>

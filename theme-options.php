@@ -27,6 +27,7 @@ function theme_options_validate($input = [])
     $input['instagram'] = wp_filter_nohtml_kses($input['instagram']);
     $input['twitter'] = wp_filter_nohtml_kses($input['twitter']);
     $input['google'] = wp_filter_nohtml_kses($input['google']);
+    $input['github'] = wp_filter_nohtml_kses($input['github']);
     $input['footer'] = ($input['footer']);
 
     return $input;
