@@ -35,9 +35,10 @@ function getRelatedPost($post_id = 0)
         $tag_ids[] = $val->term_id;
     }
     $args = array(
-        'tag_in' => $tag_ids,
+        'tag__in' => $tag_ids,
         'showposts' => 5,
         'ignore_sticky_posts' => 1,
+        'orderby' => 'rand'
     );
     $query = new WP_Query($args);
     return $query->posts;
