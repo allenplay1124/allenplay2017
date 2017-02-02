@@ -15,7 +15,7 @@ foreach ($article as $key => $val) {
     <section class="articles" id="new-articles">
         <div class="container">
             <div class="page-header">
-                <h2><span class="section-title">最新文章</span> <small>近期所發布文章</small></h2>
+                <h2><span class="section-title">The latest articles</span> <small>近期所發布文章</small></h2>
             </div>
             <?php foreach ($article as $val): ?>
                 <a href="<?php echo wp_get_shortlink($val['ID']) ?>">
@@ -25,10 +25,8 @@ foreach ($article as $key => $val) {
                                 <div class="post-thumb-img" style="
                                     background:url('<?php echo get_img_url($val['ID']);?>');
                                     background-size: cover;
-                                    background-attachment: fixed;
                                     background-position: center;
                                     background-repeat: no-repeat;
-                                    width:100%;
                                     height:250px;
                                 ">
                                 </div>

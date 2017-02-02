@@ -50,7 +50,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <link rel="shortcut icon" href="<?php bloginfo('template_url');?>/favicon.ico" />
+    <link rel="shortcut icon" href="<?php bloginfo('template_url');?>/images/favicon.ico" />
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS2 Feed" href="<?php bloginfo('rss2_url'); ?>" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <?php wp_head(); ?>
@@ -59,6 +59,39 @@
 
 <body>
 <header class="header">
+    <div class="container">
+        <div class="top-menu">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="<?php bloginfo('url')?>"><?php bloginfo('name')?></a>
+                    </div>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                                'menu' => 'primary',
+                                'theme_location' => 'primary',  //這邊要填你的選單名稱
+                                'depth' => 2,
+                                'container' => 'div',
+                                'container_class' => 'collapse navbar-collapse',
+                                'container_id' => 'bs-example-navbar-collapse-1',
+                                'menu_class' => 'nav navbar-nav',
+                                'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                                'walker' => new wp_bootstrap_navwalker(),
+                            )
+                        );
+                    ?>
+                </div>
+            </nav>
+        </div>
+        <div class="clearfix"></div>
+    </div>
     <div class="top-nav">
         <?php $top_bar = get_option('top_bar_option'); ?>
         <div class="container">
@@ -101,38 +134,5 @@
             </ul>
             <div class="clearfix"></div>
         </div>
-    </div>
-    <div class="container">
-        <div class="top-menu">
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="<?php bloginfo('url')?>"><?php bloginfo('name')?></a>
-                    </div>
-                    <?php
-                        wp_nav_menu(
-                            array(
-                                'menu' => 'primary',
-                                'theme_location' => 'primary',  //這邊要填你的選單名稱
-                                'depth' => 2,
-                                'container' => 'div',
-                                'container_class' => 'collapse navbar-collapse',
-                                'container_id' => 'bs-example-navbar-collapse-1',
-                                'menu_class' => 'nav navbar-nav',
-                                'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                                'walker' => new wp_bootstrap_navwalker(),
-                            )
-                        );
-                    ?>
-                </div>
-            </nav>
-        </div>
-        <div class="clearfix"></div>
     </div>
 </header>

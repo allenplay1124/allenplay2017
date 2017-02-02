@@ -24,6 +24,25 @@ function echoArray($data = [])
     echo '</PRE>';
 }
 
+function getRelatedPost($post_id = 0)
+{
+    $tags = wp_get_post_tags($post_id);
+    $tag_num = count($tags);
+    if($tag_num == 0) {
+        return false;
+    }
+    foreach($tags as $val) {
+        $tag_ids[] = $val->term_id;
+    }
+    $args = array(
+        'tag_in' => $tag_ids,
+        'showposts' => 5,
+        'ignore_sticky_posts' => 1,
+    );
+    $query = new WP_Query($args);
+    return $query->posts;
+}
+
 register_sidebar(array(
     'name' => '首頁側邊欄',
     'id' => 'home_sidebar',
@@ -44,4 +63,4 @@ register_sidebar(array(
     'after_title' => '</span></h1>',
 ));
 
-add_theme_support('post-thumbnails'); 
+add_theme_support('post-thumbnails');

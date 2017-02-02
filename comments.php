@@ -2,12 +2,15 @@
 if ( post_password_required() )
 	return;
 ?>
-<h3 class="comment-title"><?php comments_number('沒有迴響', '迴響 (1)', '迴響 (%)' );?></h3>
+<div class="page-header">
+    <h3 class="comment-title"><?php comments_number('沒有迴響', '迴響 (1)', '迴響 (%)' );?></h3>
+</div>
+
 <?php if ( have_comments() ) : ?>
 
 	<ol class="comment-list">
 		<?php wp_list_comments(array(
-				'walker'            => null,
+		'walker'            => null,
         'max_depth'         => '3',
         'style'             => 'ul',
         'callback'          => null,

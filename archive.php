@@ -24,10 +24,10 @@
     $args['posts_per_page'] = 9;
     $args['offset'] = $wp_query->query_vars['paged'];
  ?>
-<div class="page-info">
+<div class="archive-list">
 	<div class="container">
         <div class="page-header">
-          <h1><?php echo $archive_name ?> <small>相關文章：</small></h1>
+          <h1><?php echo $archive_name ?> <small>Related Posts：</small></h1>
         </div>
 		<div class="col-sm-8">
             <?php $post = get_posts($args); ?>
